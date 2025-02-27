@@ -1,8 +1,10 @@
 import os
 import subprocess
+import pyfiglet
 
 def figlet_yaz(text):
-    os.system(f'figlet {text}')
+    ascii_art = pyfiglet.figlet_format(text)
+    print(ascii_art)
 
 def tool():
     figlet_yaz("iSetup")
