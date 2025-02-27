@@ -8,3 +8,6 @@ print("Python3 Kuruluyor...")
 os.system("apk add python3")
 print("Python3 Kuruldu!")
 
+print("PHP Kuruluyor...")
+os.system("apk add php")
+print("PHP Kuruldu!")
