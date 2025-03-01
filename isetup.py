@@ -13,7 +13,6 @@ print("Oldu!")
 print("Bütün Paketler Toplanıyor...")
 print("Toplandı!")
 print("Bütün Paketler Başlatılıyor...")
-os.system("python backups.py")
 print("Başlatıldı!")
 print("GitHub: https://github.com/iosman456/iSetup.git")
 
