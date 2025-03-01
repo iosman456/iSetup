@@ -23,9 +23,12 @@ def color_print(text, delay=0.1):
     print(colors[-1])  # Reset at the end
 
 def rainbow_figlet(text):
+    figlet_text = os.popen(f'figlet {text}').read()
     for frame in itertools.cycle(range(len(colors))):
         os.system('clear')
-        color_print(text, delay=0.05)
+        for i, line in enumerate(figlet_text.split('\n')):
+            color = colors[(i + frame) % len(colors)]
+            print(f"{color}{line}")
         time.sleep(0.2)
 
 def update_system():
@@ -88,6 +91,7 @@ def install_all():
     color_print("Tüm Paketler Kuruldu, Görüşürüz!")
 
 def main_menu():
+    rainbow_figlet("iSetup")
     while True:
         color_print("\nAna Menü")
         color_print("1. Sistem Güncelle")
@@ -100,8 +104,7 @@ def main_menu():
         color_print("8. nano Kur")
         color_print("9. Vim Kur")
         color_print("10. Hepsini Aynı Anda Kur")
-        color_print("11. iSetup Göster")
-        color_print("12. Çıkış")
+        color_print("11. Çıkış")
 
         choice = input("Bir seçenek giriniz: ")
 
@@ -126,8 +129,6 @@ def main_menu():
         elif choice == '10':
             install_all()
         elif choice == '11':
-            rainbow_figlet("iSetup")
-        elif choice == '12':
             color_print("Çıkış yapılıyor...")
             break
         else:
