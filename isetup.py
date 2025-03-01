@@ -15,7 +15,7 @@ colors = [
     "\033[0m"    # Reset
 ]
 
-def color_print(text, delay=0.1):
+def color_print(text, delay=0.05):
     for i, char in enumerate(text):
         color = colors[i % len(colors)]
         print(f"{color}{char}", end="", flush=True)
@@ -25,7 +25,7 @@ def color_print(text, delay=0.1):
 def rainbow_figlet(text):
     figlet_text = os.popen(f'figlet {text}').read()
     for frame in itertools.cycle(range(len(colors))):
-        os.system('clear')
+        print("\033c", end="")  # Clear terminal
         for i, line in enumerate(figlet_text.split('\n')):
             color = colors[(i + frame) % len(colors)]
             print(f"{color}{line}")
@@ -93,18 +93,18 @@ def install_all():
 def main_menu():
     rainbow_figlet("iSetup")
     while True:
-        color_print("\nAna Menü")
-        color_print("1. Sistem Güncelle")
-        color_print("2. Sistem Yükselt")
-        color_print("3. Python2 Kur")
-        color_print("4. Python3 Kur")
-        color_print("5. PHP Kur")
-        color_print("6. neofetch Kur")
-        color_print("7. TMUX ve HTOP Kur")
-        color_print("8. nano Kur")
-        color_print("9. Vim Kur")
-        color_print("10. Hepsini Aynı Anda Kur")
-        color_print("11. Çıkış")
+        color_print("\nAna Menü", delay=0.02)
+        color_print("1. Sistem Güncelle", delay=0.02)
+        color_print("2. Sistem Yükselt", delay=0.02)
+        color_print("3. Python2 Kur", delay=0.02)
+        color_print("4. Python3 Kur", delay=0.02)
+        color_print("5. PHP Kur", delay=0.02)
+        color_print("6. neofetch Kur", delay=0.02)
+        color_print("7. TMUX ve HTOP Kur", delay=0.02)
+        color_print("8. nano Kur", delay=0.02)
+        color_print("9. Vim Kur", delay=0.02)
+        color_print("10. Hepsini Aynı Anda Kur", delay=0.02)
+        color_print("11. Çıkış", delay=0.02)
 
         choice = input("Bir seçenek giriniz: ")
 
@@ -129,10 +129,10 @@ def main_menu():
         elif choice == '10':
             install_all()
         elif choice == '11':
-            color_print("Çıkış yapılıyor...")
+            color_print("Çıkış yapılıyor...", delay=0.02)
             break
         else:
-            color_print("Geçersiz seçenek, lütfen tekrar deneyin.")
+            color_print("Geçersiz seçenek, lütfen tekrar deneyin.", delay=0.02)
 
 if __name__ == "__main__":
     main_menu()
