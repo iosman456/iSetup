@@ -93,7 +93,7 @@ def main_menu():
         color_print("10. Hepsini Aynı Anda Kur")
         color_print("11. Çıkış")
 
-        color_print choice = input("Bir seçenek giriniz: ")
+        choice = input("Bir seçenek giriniz: ")
 
         if choice == '1':
             update_system()
