@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import os
+import time
+import itertools
 
 # ANSI color codes for rainbow effect
 colors = [
@@ -13,11 +15,18 @@ colors = [
     "\033[0m"    # Reset
 ]
 
-def color_print(text):
+def color_print(text, delay=0.1):
     for i, char in enumerate(text):
         color = colors[i % len(colors)]
-        print(f"{color}{char}", end="")
+        print(f"{color}{char}", end="", flush=True)
+        time.sleep(delay)
     print(colors[-1])  # Reset at the end
+
+def rainbow_figlet(text):
+    for frame in itertools.cycle(range(len(colors))):
+        os.system('clear')
+        color_print(text, delay=0.05)
+        time.sleep(0.2)
 
 def update_system():
     color_print("İOS Update Oluyor...")
@@ -91,7 +100,8 @@ def main_menu():
         color_print("8. nano Kur")
         color_print("9. Vim Kur")
         color_print("10. Hepsini Aynı Anda Kur")
-        color_print("11. Çıkış")
+        color_print("11. iSetup Göster")
+        color_print("12. Çıkış")
 
         choice = input("Bir seçenek giriniz: ")
 
@@ -116,6 +126,8 @@ def main_menu():
         elif choice == '10':
             install_all()
         elif choice == '11':
+            rainbow_figlet("iSetup")
+        elif choice == '12':
             color_print("Çıkış yapılıyor...")
             break
         else:
