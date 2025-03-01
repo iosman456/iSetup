@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import time
 import itertools
 
 # ANSI color codes for rainbow effect
@@ -19,7 +18,6 @@ def color_print(text, delay=0.05):
     for i, char in enumerate(text):
         color = colors[i % len(colors)]
         print(f"{color}{char}", end="", flush=True)
-        time.sleep(delay)
     print(colors[-1])  # Reset at the end
 
 def rainbow_figlet(text):
@@ -29,7 +27,6 @@ def rainbow_figlet(text):
         for i, line in enumerate(figlet_text.split('\n')):
             color = colors[(i + frame) % len(colors)]
             print(f"{color}{line}")
-        time.sleep(0.2)
 
 def update_system():
     color_print("İOS Update Oluyor...")
