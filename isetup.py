@@ -11,7 +11,7 @@ print("Oldu!")
 print("Bütün Paketler Toplanıyor...")
 print("Toplandı!")
 print("Bütün Paketler Başlatılıyor...")
-os.system("bash backups.sh")
+os.system("python backups.py")
 print("Başlatıldı!")
 print("GitHub: https://github.com/iosman456/iSetup.git
 
