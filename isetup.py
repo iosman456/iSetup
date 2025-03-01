@@ -5,6 +5,42 @@ def show_disk_usage():
     os.system("df -h")
     print("Disk Kullanımı Gösterildi!")
 
+def update_system():
+    print("İOS Update Oluyor...")
+    os.system("apk update")
+    print("Oldu!")
+
+def upgrade_system():
+    print("İOS Upgrade Oluyor...")
+    os.system("apk upgrade")
+    print("Oldu!")
+
+def install_python2():
+    print("Python2 Kuruluyor...")
+    os.system("apk add python2")
+    print("Python2 Kuruldu!")
+
+def install_python3():
+    print("Python3 Kuruluyor...")
+    os.system("apk add python3")
+    print("Python3 Kuruldu!")
+
+def install_php():
+    print("PHP Kuruluyor...")
+    os.system("apk add php")
+    print("PHP Kuruldu!")
+
+def install_neofetch():
+    print("neofetch Kuruluyor...")
+    os.system("apk add neofetch")
+    print("neofetch Kuruldu!")
+    os.system("neofetch")
+
+def install_tmux_htop():
+    print("TMUX ve HTOP Kuruluyor...")
+    os.system("apk add tmux htop")
+    print("Tüm Paketler Kuruldu, Görüşürüz!")
+
 def main_menu():
     while True:
         print("\nAna Menü")
@@ -41,3 +77,6 @@ def main_menu():
             break
         else:
             print("Geçersiz seçenek, lütfen tekrar deneyin.")
+
+if __name__ == "__main__":
+    main_menu()
