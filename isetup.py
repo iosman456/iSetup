@@ -13,7 +13,7 @@ print("Toplandı!")
 print("Bütün Paketler Başlatılıyor...")
 os.system("python backups.py")
 print("Başlatıldı!")
-print("GitHub: https://github.com/iosman456/iSetup.git
+print("GitHub: https://github.com/iosman456/iSetup.git")
 
 print("Python2 Kuruluyor...")
 os.system("apk add python2")
